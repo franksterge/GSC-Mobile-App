@@ -11,11 +11,14 @@ import MaterialComponents
 class ViewController: UINavigationController {
 
     let tabBar = MDCBottomNavigationBar()
+    let backGroundView = UIImageView()
     let fab = MDCFloatingButton(shape: .default)
+    let page = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        backGroundView.image = UIImage()
         configureBottomNavigationBar()
         configureFloatingButton()
 
@@ -34,9 +37,9 @@ class ViewController: UINavigationController {
         self.tabBar.titleVisibility = MDCBottomNavigationBarTitleVisibility.selected
         self.tabBar.alignment = MDCBottomNavigationBarAlignment.justifiedAdjacentTitles
         let homeItem = UITabBarItem(title: "Home", image: UIImage(named: "ic_home"), tag: 0)
-        let readingItem = UITabBarItem(title: "Readings", image: UIImage(named: "ic_read"), tag: 0)
-        let chatItem = UITabBarItem(title: "Chat", image: UIImage(named: "ic_chat"), tag: 0)
-        let profileItem = UITabBarItem(title: "My Profile", image: UIImage(named: "ic_user"), tag: 0)
+        let readingItem = UITabBarItem(title: "Readings", image: UIImage(named: "ic_read"), tag: 1)
+        let chatItem = UITabBarItem(title: "Chat", image: UIImage(named: "ic_chat"), tag: 2)
+        let profileItem = UITabBarItem(title: "My Profile", image: UIImage(named: "ic_user"), tag: 3)
         self.tabBar.items = [homeItem, readingItem, chatItem, profileItem]
         self.tabBar.selectedItem = homeItem
         self.view.addSubview(self.tabBar)
